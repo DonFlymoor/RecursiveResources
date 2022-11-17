@@ -37,7 +37,7 @@ dependencies {
 
     //modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
-    modImplementation include("nl.enjarai:shared-resources-api:${project.shared_resources_version}")
+    //modImplementation include("nl.enjarai:shared-resources-api:${project.shared_resources_version}")
 }
 
 processResources {
