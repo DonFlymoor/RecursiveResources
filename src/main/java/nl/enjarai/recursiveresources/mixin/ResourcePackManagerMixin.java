@@ -1,9 +1,10 @@
 package nl.enjarai.recursiveresources.mixin;
 
-import net.fabricmc.loader.api.FabricLoader;
+//import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProvider;
+import net.minecraftforge.fml.ModList;
 import nl.enjarai.recursiveresources.compat.shared_resources.ExternalNestedFolderPackFinder;
 import nl.enjarai.recursiveresources.repository.NestedFolderPackFinder;
 import nl.enjarai.shared_resources.api.DefaultGameResources;
@@ -40,7 +41,7 @@ public abstract class ResourcePackManagerMixin {
             providers.add(new NestedFolderPackFinder(client.getResourcePackDir()));
 
             // Load shared resources compat if present
-            if (FabricLoader.getInstance().isModLoaded("shared-resources")) {
+            if (ModList.get().isLoaded("shared-resources")) {
                 providers.add(new ExternalNestedFolderPackFinder(() -> GameResourceHelper.getPathFor(DefaultGameResources.RESOURCEPACKS)));
             }
         }

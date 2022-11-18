@@ -1,5 +1,6 @@
 plugins {
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    //id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'dev.architectury.loom' version '0.12.0-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -7,48 +8,41 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = project.mod_version
+version = "${project.mod_version}-${project.minecraft_version}"
 group = project.maven_group
 
-repositories {
-    maven {
-        name "Terraformers Maven"
-        url 'https://maven.terraformersmc.com'
+loom {
+    accessWidenerPath = file("src/main/resources/recursiveresources.accesswidener")
+    forge {
+        mixinConfigs = [
+                "recursiveresources.mixins.json"
+        ]
     }
-    maven { url 'https://jitpack.io' }
+}
+
+repositories {
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
-
-    modImplementation include("com.github.enjarai:shared-resources:${project.shared_resources_version}")
+    //modImplementation include("com.github.enjarai:shared-resources:${project.shared_resources_version}")
 }
 
 processResources {
     inputs.property "version", project.version
 
-    filesMatching("fabric.mod.json") {
+    filesMatching("META-INF/mods.toml") {
         expand "version": project.version
     }
 }
 
-version = "$version+$minecraft_version"
-
-// ensure that the encoding is set to UTF-8, no matter what the system default is
-// this fixes some edge cases with special characters not displaying correctly
-// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
 jar {
     from "LICENSE"
-}
-
-loom {
-	accessWidenerPath = file("src/main/resources/recursiveresources.accesswidener")
 }

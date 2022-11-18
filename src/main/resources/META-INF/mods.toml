@@ -1,0 +1,29 @@
+modLoader = "javafml"
+loaderVersion = "[38,)"
+license = "MPL-2.0"
+
+[[mods]]
+modId = "recursiveresources"
+version = "${version}"
+displayName = "Recursive Resources"
+#displayURL="https://github.com/TexTrueStudio/MODRepo"
+logoFile="assets/recursiveresources/icon.png"
+credits="enjarai, chylex"
+authors="TexTrue, TexTrueStudio"
+description = '''
+Enhances the Resource Pack menu by adding folder support for easier pack organization, ability to search packs by name or description, and new sorting options.
+'''
+
+[[dependencies.recursiveresources]]
+modId = "forge"
+mandatory = true
+versionRange = "[38,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.recursiveresources]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18,)"
+ordering = "NONE"
+side = "BOTH"
