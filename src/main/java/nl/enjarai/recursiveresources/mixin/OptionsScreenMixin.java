@@ -1,6 +1,5 @@
 package nl.enjarai.recursiveresources.mixin;
 
-//import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.option.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -8,15 +7,15 @@ import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.text.TranslatableText;
 import net.minecraftforge.fml.ModList;
 import nl.enjarai.recursiveresources.gui.CustomResourcePackScreen;
-import nl.enjarai.shared_resources.api.DefaultGameResources;
-import nl.enjarai.shared_resources.api.GameResourceHelper;
+//import nl.enjarai.shared_resources.api.DefaultGameResources;
+//import nl.enjarai.shared_resources.api.GameResourceHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
+//import java.util.List;
 
 @Mixin(OptionsScreen.class)
 public abstract class OptionsScreenMixin {
@@ -33,6 +32,7 @@ public abstract class OptionsScreenMixin {
         var packRoots = new ArrayList<Path>();
         packRoots.add(client.getResourcePackDir().toPath());
 
+        /*
         if (ModList.get().isLoaded("shared-resources")) {
             var directory = GameResourceHelper.getPathFor(DefaultGameResources.RESOURCEPACKS);
 
@@ -40,6 +40,7 @@ public abstract class OptionsScreenMixin {
                 packRoots.add(directory);
             }
         }
+         */
 
         client.setScreen(new CustomResourcePackScreen(
                 (OptionsScreen) (Object) this, client.getResourcePackManager(),

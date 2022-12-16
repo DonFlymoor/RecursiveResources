@@ -1,6 +1,5 @@
 package nl.enjarai.recursiveresources;
 
-//import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.util.Identifier;
 import net.minecraftforge.fml.IExtensionPoint;
 import net.minecraftforge.fml.ModLoadingContext;
