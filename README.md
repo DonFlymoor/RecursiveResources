@@ -1,10 +1,10 @@
-# Recursive Resources <img src="src/main/resources/icon.png" align="right" width="50">
+# Recursive Resources - Forge <img src="src/main/resources/icon.png" align="right" width="50">
 
 ![Enviroment](https://img.shields.io/badge/Enviroment-Client-purple)
 
 ## Features
 
-Recursive Resources is a mod that revamps the vanilla resource pack menu to be more user-friendly with the addition of many Quality of Life features, such as:
+Recursive Resources - Forge is a mod that revamps the vanilla resource pack menu to be more user-friendly with the addition of many Quality of Life features, such as:
 
 - Organize resource packs into folders that you can navigate from within the game
 - Give these folders custom icons by placing an image named `icon.png` inside them
