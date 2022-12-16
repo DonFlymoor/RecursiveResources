@@ -1,5 +1,5 @@
 package nl.enjarai.recursiveresources.compat.shared_resources;
-/*
+
 import net.minecraft.resource.ResourcePackProfile;
 import nl.enjarai.recursiveresources.repository.NestedFolderPackFinder;
 
@@ -25,4 +25,4 @@ public class ExternalNestedFolderPackFinder extends NestedFolderPackFinder {
         super.register(profileAdder, factory);
     }
 }
- */
+
