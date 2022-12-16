@@ -1,4 +1,4 @@
-# Recursive Resources <img src="src/main/resources/assets/recursiveresources/icon.png" align="right" width="50">
+# Recursive Resources - Forge <img src="src/main/resources/assets/recursiveresources/icon.png" align="right" width="50">
 
 ![Enviroment](https://img.shields.io/badge/Enviroment-Client-purple)
 
